@@ -1,100 +1,106 @@
 # Meta-TNT
 
-Meta-TNT è un tool per gestire i metadati dei file.
+Meta-TNT is a tool for managing the metadata of files.
 
-## Installazione
+## Installation
 
-1. Clona il repository:
+1. Clone the repository:
    ```sh
-   git clone https://github.com/tuo_utente/Meta-TNT.git
+   git clone https://github.com/Filippide8864/Meta-TNT.git
    cd Meta-TNT
    ```
 
 2. Installa `exiftool`:
-   - Su Ubuntu/Debian:
+   - On Ubuntu/Debian:
      ```sh
      sudo apt-get update
      sudo apt-get install exiftool
      ```
-   - Su macOS:
+   - On macOS:
      ```sh
      brew install exiftool
      ```
-   - Su Windows:
-     Scarica `exiftool` dal sito ufficiale e aggiungilo al tuo PATH.
+   - On Windows:
+     Download `exiftool` from the official site and add it to your PATH.
 
-3. Verifica l'installazione di `exiftool`:
+3. Verify the installation of `exiftool`:
    ```sh
    exiftool -ver
    ```
 
-## Uso
+4. Installa le dipendenze Python:
+   ```sh
+   pip install -r requirements.txt
+   ```
 
-Esegui il comando `python main.py -h` per visualizzare l'aiuto e i comandi disponibili.
+## Use
 
-### Esempi di Comandi
+Run the command `python main.py -h` to view the help and available commands.
 
-#### Rimuovere Tutti i Metadati
-```sh
-python main.py remove /percorso/alla/tua/directory
+### Examples of Commands
+
+#### Remove All Metadata
+``sh
+python main.py remove /path/to/your/ directory
 ```
 
-#### Elencare Tutti i Metadati
-```sh
-python main.py list /percorso/alla/tua/directory
+#### List All Metadata
+``sh
+python main.py list /path/to/your/ directory
 ```
 
-#### Aggiungere Metadati Specifici
-```sh
-python main.py add /percorso/alla/tua/directory -Author="Nome Autore" -Copyright="Anno Copyright"
+#### Add Specific Metadata
+``sh
+python main.py add /path/to/your/ directory -Author=‘Author Name’ -Copyright="Copyright Year’
 ```
 
-#### Rimuovere Metadati EXIF
-```sh
-python main.py remove_exif /percorso/alla/tua/directory
+#### Remove EXIF Metadata
+``sh
+python main.py remove_exif /path/to/your/directory
 ```
 
-#### Elencare Metadati EXIF
-```sh
-python main.py list_exif /percorso/alla/tua/directory
+#### List EXIF Metadata
+``sh
+python main.py list_exif /path/to/your/ directory
 ```
 
-#### Aggiungere Metadati EXIF Specifici
-```sh
-python main.py add_exif /percorso/alla/tua/directory -EXIF:Make="Marca" -EXIF:Model="Modello"
+#### Add Specific EXIF Metadata
+``sh
+python main.py add_exif /path/to/your/directory -EXIF:Make=‘Make’ -EXIF:Model="Model’
 ```
 
-#### Rimuovere Metadati XMP
-```sh
-python main.py remove_xmp /percorso/alla/tua/directory
+#### Remove XMP Metadata
+``sh
+python main.py remove_xmp /path/to/your/ directory
 ```
 
-#### Elencare Metadati XMP
-```sh
-python main.py list_xmp /percorso/alla/tua/directory
+#### List XMP Metadata
+``sh
+python main.py list_xmp /path/to/your/ directory
 ```
 
-#### Aggiungere Metadati XMP Specifici
-```sh
-python main.py add_xmp /percorso/alla/tua/directory -XMP:CreatorTool="Strumento Creatore"
+#### Add specific XMP Metadata
+``sh
+python main.py add_xmp /path/to/your/ directory -XMP:CreatorTool="Creator Tool’
 ```
 
-#### Rimuovere Metadati IPTC
-```sh
-python main.py remove_ipptc /percorso/alla/tua/directory
+#### Remove IPTC Metadata
+``sh
+python main.py remove_ipptc /path/to/your/ directory
 ```
 
-#### Elencare Metadati IPTC
-```sh
-python main.py list_ipptc /percorso/alla/tua/directory
+#### List IPTC Metadata
+``sh
+python main.py list_ipptc /path/to/your/ directory
 ```
 
-#### Aggiungere Metadati IPTC Specifici
-```sh
-python main.py add_ipptc /percorso/alla/tua/directory -IPTC:By-line="Nome Autore"
+#### Add Specific IPTC Metadata
+``sh
+python main.py add_ipptc /path/to/your/ directory -IPTC:By-line="Author Name’
 ```
 
-## Note Aggiuntive
+Translated with www.DeepL.com/Translator (free version)
 
-- **Backup**: Prima di eseguire operazioni che modificano i metadati, considera di fare backup dei file originali.
-- **Compatibilità**: `exiftool` supporta una vasta gamma di formati di file, ma non tutti i metadati possono essere gestiti da tutti i formati. Consulta la documentazione di `exiftool` per ulteriori dettagli.
+## Additional Notes
+-**Backup**: Before performing operations that modify metadata, consider backing up the original files.
+-**Compatibility**: `exiftool` supports a wide range of file formats, but not all metadata can be handled by all formats. See the `exiftool` documentation for more details.

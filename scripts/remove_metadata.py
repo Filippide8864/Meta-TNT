@@ -5,11 +5,11 @@ from concurrent.futures import ThreadPoolExecutor
 
 def remove_metadata(file_path):
     try:
-        print(f"Rimozione dei metadati da: {file_path}")
+        print(f"Removing metadata from: {file_path}")
         subprocess.run(['exiftool', '-all=', file_path], check=True)
-        print(f"Metadati rimossi da: {file_path}")
+        print(f"Metadata removed from: {file_path}")
     except subprocess.CalledProcessError as e:
-        print(f"Errore durante la rimozione dei metadati da {file_path}: {e}")
+        print(f"Error removing metadata from {file_path}: {e}")
 
 def process_directory(directory):
     files = []
@@ -22,7 +22,7 @@ def process_directory(directory):
 
 def main(directory):
     if not os.path.isdir(directory):
-        print(f"La directory {directory} non esiste.")
+        print(f"Directory {directory} does not exist.")
         sys.exit(1)
 
     process_directory(directory)

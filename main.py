@@ -7,53 +7,53 @@ from scripts import remove_xmp, list_xmp, add_xmp
 from scripts import remove_ipptc, list_ipptc, add_ipptc
 
 def main():
-    parser = argparse.ArgumentParser(description="Meta-TNT - Gestione dei Metadati dei File")
+    parser = argparse.ArgumentParser(description="Meta-TNT - File Metadata Management")
 
-    subparsers = parser.add_subparsers(dest="command", help="Comandi disponibili")
+    subparsers = parser.add_subparsers(dest="command", help="Available commands")
 
-    # Comandi generali
-    remove_parser = subparsers.add_parser("remove", help="Rimuove tutti i metadati dai file in una directory specificata")
-    remove_parser.add_argument("directory", help="Directory dei file")
+    # General commands
+    remove_parser = subparsers.add_parser("remove", help="Remove all metadata from files in a specified directory")
+    remove_parser.add_argument("directory", help="Directory of files")
 
-    list_parser = subparsers.add_parser("list", help="Elenca tutti i metadati dei file in una directory specificata")
-    list_parser.add_argument("directory", help="Directory dei file")
+    list_parser = subparsers.add_parser("list", help="List all metadata of files in a specified directory")
+    list_parser.add_argument("directory", help="Directory of files")
 
-    add_parser = subparsers.add_parser("add", help="Aggiunge metadati specifici ai file in una directory specificata")
-    add_parser.add_argument("directory", help="Directory dei file")
-    add_parser.add_argument("metadata", nargs='+', help="Metadati da aggiungere")
+    add_parser = subparsers.add_parser("add", help="Add specific metadata to files in a specified directory")
+    add_parser.add_argument("directory", help="Directory of files")
+    add_parser.add_argument("metadata", nargs='+', help="Metadata to add")
 
-    # Comandi EXIF
-    remove_exif_parser = subparsers.add_parser("remove_exif", help="Rimuove i metadati EXIF dai file in una directory specificata")
-    remove_exif_parser.add_argument("directory", help="Directory dei file")
+    # EXIF commands
+    remove_exif_parser = subparsers.add_parser("remove_exif", help="Remove EXIF metadata from files in a specified directory")
+    remove_exif_parser.add_argument("directory", help="Directory of files")
 
-    list_exif_parser = subparsers.add_parser("list_exif", help="Elenca i metadati EXIF dei file in una directory specificata")
-    list_exif_parser.add_argument("directory", help="Directory dei file")
+    list_exif_parser = subparsers.add_parser("list_exif", help="List EXIF metadata of files in a specified directory")
+    list_exif_parser.add_argument("directory", help="Directory of files")
 
-    add_exif_parser = subparsers.add_parser("add_exif", help="Aggiunge metadati EXIF specifici ai file in una directory specificata")
-    add_exif_parser.add_argument("directory", help="Directory dei file")
-    add_exif_parser.add_argument("metadata", nargs='+', help="Metadati EXIF da aggiungere")
+    add_exif_parser = subparsers.add_parser("add_exif", help="Add specific EXIF metadata to files in a specified directory")
+    add_exif_parser.add_argument("directory", help="Directory of files")
+    add_exif_parser.add_argument("metadata", nargs='+', help="EXIF metadata to add")
 
-    # Comandi XMP
-    remove_xmp_parser = subparsers.add_parser("remove_xmp", help="Rimuove i metadati XMP dai file in una directory specificata")
-    remove_xmp_parser.add_argument("directory", help="Directory dei file")
+    # XMP commands
+    remove_xmp_parser = subparsers.add_parser("remove_xmp", help="Remove XMP metadata from files in a specified directory")
+    remove_xmp_parser.add_argument("directory", help="Directory of files")
 
-    list_xmp_parser = subparsers.add_parser("list_xmp", help="Elenca i metadati XMP dei file in una directory specificata")
-    list_xmp_parser.add_argument("directory", help="Directory dei file")
+    list_xmp_parser = subparsers.add_parser("list_xmp", help="List XMP metadata of files in a specified directory")
+    list_xmp_parser.add_argument("directory", help="Directory of files")
 
-    add_xmp_parser = subparsers.add_parser("add_xmp", help="Aggiunge metadati XMP specifici ai file in una directory specificata")
-    add_xmp_parser.add_argument("directory", help="Directory dei file")
-    add_xmp_parser.add_argument("metadata", nargs='+', help="Metadati XMP da aggiungere")
+    add_xmp_parser = subparsers.add_parser("add_xmp", help="Add specific XMP metadata to files in a specified directory")
+    add_xmp_parser.add_argument("directory", help="Directory of files")
+    add_xmp_parser.add_argument("metadata", nargs='+', help="XMP metadata to add")
 
-    # Comandi IPTC
-    remove_ipptc_parser = subparsers.add_parser("remove_ipptc", help="Rimuove i metadati IPTC dai file in una directory specificata")
-    remove_ipptc_parser.add_argument("directory", help="Directory dei file")
+    # IPTC commands
+    remove_ipptc_parser = subparsers.add_parser("remove_ipptc", help="Remove IPTC metadata from files in a specified directory")
+    remove_ipptc_parser.add_argument("directory", help="Directory of files")
 
-    list_ipptc_parser = subparsers.add_parser("list_ipptc", help="Elenca i metadati IPTC dei file in una directory specificata")
-    list_ipptc_parser.add_argument("directory", help="Directory dei file")
+    list_ipptc_parser = subparsers.add_parser("list_ipptc", help="List IPTC metadata of files in a specified directory")
+    list_ipptc_parser.add_argument("directory", help="Directory of files")
 
-    add_ipptc_parser = subparsers.add_parser("add_ipptc", help="Aggiunge metadati IPTC specifici ai file in una directory specificata")
-    add_ipptc_parser.add_argument("directory", help="Directory dei file")
-    add_ipptc_parser.add_argument("metadata", nargs='+', help="Metadati IPTC da aggiungere")
+    add_ipptc_parser = subparsers.add_parser("add_ipptc", help="Add specific IPTC metadata to files in a specified directory")
+    add_ipptc_parser.add_argument("directory", help="Directory of files")
+    add_ipptc_parser.add_argument("metadata", nargs='+', help="IPTC metadata to add")
 
     args = parser.parse_args()
 
@@ -87,7 +87,7 @@ def main():
         elif args.command == "add_ipptc":
             add_ipptc.main(args.directory, args.metadata)
     except Exception as e:
-        print(f"Errore durante l'esecuzione del comando: {e}")
+        print(f"Error executing command: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":

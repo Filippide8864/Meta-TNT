@@ -5,11 +5,11 @@ from concurrent.futures import ThreadPoolExecutor
 
 def remove_xmp(file_path):
     try:
-        print(f"Rimozione dei metadati XMP da: {file_path}")
+        print(f"Removing XMP metadata from: {file_path}")
         subprocess.run(['exiftool', '-XMP=', file_path], check=True)
-        print(f"Metadati XMP rimossi da: {file_path}")
+        print(f"XMP metadata removed from: {file_path}")
     except subprocess.CalledProcessError as e:
-        print(f"Errore durante la rimozione dei metadati XMP da {file_path}: {e}")
+        print(f"Error removing XMP metadata from {file_path}: {e}")
 
 def process_directory(directory):
     files = []
@@ -22,7 +22,7 @@ def process_directory(directory):
 
 def main(directory):
     if not os.path.isdir(directory):
-        print(f"La directory {directory} non esiste.")
+        print(f"Directory {directory} does not exist.")
         sys.exit(1)
 
     process_directory(directory)

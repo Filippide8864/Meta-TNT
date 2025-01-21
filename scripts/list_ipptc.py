@@ -5,11 +5,11 @@ from concurrent.futures import ThreadPoolExecutor
 
 def list_ipptc(file_path):
     try:
-        print(f"Elenco dei metadati IPTC di: {file_path}")
+        print(f"Listing IPTC metadata of: {file_path}")
         result = subprocess.run(['exiftool', '-IPTC', file_path], capture_output=True, text=True, check=True)
-        print(f"Metadati IPTC di {file_path}:\n{result.stdout}")
+        print(f"IPTC metadata of {file_path}:\n{result.stdout}")
     except subprocess.CalledProcessError as e:
-        print(f"Errore durante l'elenco dei metadati IPTC di {file_path}: {e}")
+        print(f"Error listing IPTC metadata of {file_path}: {e}")
 
 def process_directory(directory):
     files = []
@@ -22,7 +22,7 @@ def process_directory(directory):
 
 def main(directory):
     if not os.path.isdir(directory):
-        print(f"La directory {directory} non esiste.")
+        print(f"Directory {directory} does not exist.")
         sys.exit(1)
 
     process_directory(directory)

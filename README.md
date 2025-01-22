@@ -17,7 +17,7 @@ Metadata is essential information embedded within files that describes the file'
 
 1. **Clone the Repository**:
    ```sh
-   git clone https://github.com/your_username/Meta-TNT.git
+   git clone https://github.com/Filippide8864/Meta-TNT
    cd Meta-TNT
    ```
 
